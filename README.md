@@ -23,7 +23,7 @@ Think of it as a very targeted, very narrow safety net, not a cure.
 
 | # | Symptom | Where | Cause |
 |---|---------|-------|-------|
-| 1 | Random crash ~20-30 min into a session | `nmh3-Win64-Shipping.exe + 0x17c3f3d` | Intrusive-refcount decrement (`lock xadd`) on a dangling pointer during a Garbage Collection pass |
+| 1 | Random crash ~20-30 min into a session at side mission loading | `nmh3-Win64-Shipping.exe + 0x17c3f3d` | Intrusive-refcount decrement (`lock xadd`) on a dangling pointer during a Garbage Collection pass |
 | 2 | Crash right after beating certain bosses, on the load transition | `nmh3-Win64-Shipping.exe + 0x13dc1a6` | Reading a percentage/ratio field (health%, load%, or similar) off an object already torn down by the time the loading screen reads it |
 
 Both are guarded by a Vectored Exception Handler that steps `RIP` past
