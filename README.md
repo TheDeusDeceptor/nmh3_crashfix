@@ -1,4 +1,4 @@
-# No More Heores III Crash Fix (winmm.dll proxy)
+# No More Heroes III Crash Fix (winmm.dll proxy)
 
 A crash **mitigation** for two reproducible, dangling-pointer crashes in
 *No More Heroes 3* (PC, Unreal Engine 4.27.1, Shipping build), found by
