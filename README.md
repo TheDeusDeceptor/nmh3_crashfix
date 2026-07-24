@@ -23,7 +23,7 @@ Think of it as a very targeted, very narrow safety net, not a cure.
 
 | # | Symptom | Where | Cause |
 |---|---------|-------|-------|
-| 1 | Random crash ~20-30 min into a session at side mission loading | `nmh3-Win64-Shipping.exe + 0x17c3f3d` | Intrusive-refcount decrement (`lock xadd`) on a dangling pointer during a Garbage Collection pass |
+| 1 | Random crash ~20-30 min into a session | `nmh3-Win64-Shipping.exe + 0x17c3f3d` | Intrusive-refcount decrement (`lock xadd`) on a dangling pointer during a Garbage Collection pass |
 | 2 | Crash right after beating certain bosses, on the load transition | `nmh3-Win64-Shipping.exe + 0x13dc1a6` | Reading a percentage/ratio field (health%, load%, or similar) off an object already torn down by the time the loading screen reads it |
 
 Both are guarded by a Vectored Exception Handler that steps `RIP` past
@@ -81,7 +81,9 @@ missing legacy functions nobody calls anymore.
 ## Install
 
 1. Download `winmm.dll` from the [Releases](../../releases) page, or
-   build it yourself (see below).
+   build it yourself (see below). Every push and pull request is also
+   built automatically by GitHub Actions if you'd rather grab a
+   workflow-run artifact than wait for a tagged release.
 2. Drop it in the game's `Binaries\Win64\` folder, next to
    `nmh3-Win64-Shipping.exe`.
 3. Launch the game normally.
