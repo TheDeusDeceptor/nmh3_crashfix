@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y mingw-w64
 
       - name: Build
-        run: ./build.sh
+        run: bash build.sh
 
       - name: Verify it's a real PE64 DLL
         run: file winmm.dll | grep -q "PE32+ executable (DLL)"
